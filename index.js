@@ -37,4 +37,4 @@ function left(){
         a=document.getElementsByClassName("content")[i];
         a.classList.remove("hide");
     }
-}
+};
