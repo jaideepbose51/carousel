@@ -38,7 +38,7 @@ img {
   background-color: #6073b1cc;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 2.8s ease-in-out;
+  transition: transform 5.8s ease-in-out;
 }
 .image:hover:after {
   transform: scaleX(1);
@@ -49,7 +49,7 @@ img {
   position: absolute;
   top: 5vh;
   padding: 10px;
-  margin-left: 20px;
+  margin-left: 50px;
   width: 60vh;
   height: max-content;
   word-wrap: break-word;
@@ -63,4 +63,18 @@ img {
 .hide {
   visibility: hidden;
   display: none;
+}
+
+.icons {
+  background-color: rgba(222, 222, 222, 0.132);
+  backdrop-filter: blur();
+  width: 40px;
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  opacity: 0.4;
+  float: right;
+}
+.icons:hover {
+  opacity: 0.8;
 }
