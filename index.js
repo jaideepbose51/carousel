@@ -1,40 +1,49 @@
-let i=0;
+let i = 0;
+let intervalId;
 
-setInterval( scroll,6*1000);
+function startCarousel() {
+  intervalId = setInterval(scroll, 6 * 1000);
+}
 
-function scroll()
-{
-    let a=document.getElementsByClassName("content")[i];
-    a.classList.add("hide");
-    if(i==4)
-    {
-        i=0;
-        a=document.getElementsByClassName("content")[i];
-        a.classList.remove("hide");
-    }
-    else
-    {
-        i++;
-        a=document.getElementsByClassName("content")[i];
-        a.classList.remove("hide");
-    }
+function stopCarousel() {
+  clearInterval(intervalId);
 }
-function right(){
-    scroll()
+
+function scroll() {
+  let a = document.getElementsByClassName("content")[i];
+  a.classList.add("hide");
+  if (i === 4) {
+    i = 0;
+    a = document.getElementsByClassName("content")[i];
+    a.classList.remove("hide");
+  } else {
+    i++;
+    a = document.getElementsByClassName("content")[i];
+    a.classList.remove("hide");
+  }
 }
-function left(){
-    let a=document.getElementsByClassName("content")[i];
-    a.classList.add("hide");
-    if(i==0)
-    {
-        i=4;
-        a=document.getElementsByClassName("content")[i];
-        a.classList.remove("hide");
-    }
-    else
-    {
-        i--;
-        a=document.getElementsByClassName("content")[i];
-        a.classList.remove("hide");
-    }
-};
+
+function right() {
+  stopCarousel();
+  scroll();
+  startCarousel();
+}
+
+function left() {
+  stopCarousel();
+  let a = document.getElementsByClassName("content")[i];
+  a.classList.add("hide");
+  if (i === 0) {
+    i = 4;
+    a = document.getElementsByClassName("content")[i];
+    a.classList.remove("hide");
+  } else {
+    i--;
+    a = document.getElementsByClassName("content")[i];
+    a.classList.remove("hide");
+  }
+  startCarousel();
+}
+
+// Start the carousel when the page loads
+startCarousel();
