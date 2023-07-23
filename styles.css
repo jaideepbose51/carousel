@@ -9,8 +9,8 @@ body {
 }
 
 img {
-  width: 100vw;
-  height: 98vh;
+  width: 98.69vw;
+  height: 98.7vh;
   animation: fadein;
   animation-duration: 0.3s;
 }
@@ -38,10 +38,16 @@ img {
   background-color: #6073b1cc;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 5.8s ease-in-out;
+  animation: expandLine 6s ease-in-out infinite;
 }
-.image:hover:after {
-  transform: scaleX(1);
+
+@keyframes expandLine {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
 }
 
 .text {
@@ -73,8 +79,56 @@ img {
   position: absolute;
   top: 50%;
   opacity: 0.4;
-  float: right;
+  /* float: right; */
 }
 .icons:hover {
   opacity: 0.8;
+}
+
+.mini_img {
+  height: 100px;
+  width: 100px;
+  margin-left: 10px;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+.parent:hover img:not(:hover) {
+  opacity: 0.3;
+}
+
+.parent {
+  display: inline-flex;
+  flex-direction: row;
+  width: 350px;
+  height: fit-content;
+  border-radius: 9px;
+  overflow-x: hidden;
+}
+.mini_main {
+  position: absolute;
+  background-color: #ffffff47;
+  border-radius: 20px;
+  padding: 5px;
+  top: 60vh;
+  left: 60vw;
+}
+
+.iconsmini {
+  background-color: rgba(222, 222, 222, 0.132);
+  backdrop-filter: blur();
+  width: 40px;
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 1;
+  opacity: 0.6;
+}
+.iconsmini:hover {
+  opacity: 1;
 }

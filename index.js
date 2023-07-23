@@ -47,3 +47,20 @@ function left() {
 
 // Start the carousel when the page loads
 startCarousel();
+
+
+
+
+
+// mini scroll image
+const container = document.querySelector(".parent");
+const scrollLeftButton = document.querySelector(".leftminiL");
+const scrollRightButton = document.querySelector(".rightminiR");
+
+scrollLeftButton.addEventListener("click", () => {
+  container.scrollLeft -= 100; // Change the scroll amount as needed
+});
+
+scrollRightButton.addEventListener("click", () => {
+  container.scrollLeft += 100; // Change the scroll amount as needed
+});
